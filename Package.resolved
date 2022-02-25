@@ -1,0 +1,106 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
+          "version": "5.5.0"
+        }
+      },
+      {
+        "package": "combine-schedulers",
+        "repositoryURL": "https://github.com/pointfreeco/combine-schedulers",
+        "state": {
+          "branch": null,
+          "revision": "4cf088c29a20f52be0f2ca54992b492c54e0076b",
+          "version": "0.5.3"
+        }
+      },
+      {
+        "package": "Common",
+        "repositoryURL": "https://github.com/IzumiShaka-desu/Common.git",
+        "state": {
+          "branch": "main",
+          "revision": "cf9997afab2ee4a0f60af52d01d3e7bddf9599a5",
+          "version": null
+        }
+      },
+      {
+        "package": "Detail",
+        "repositoryURL": "https://github.com/IzumiShaka-desu/Detail-gemmu.git",
+        "state": {
+          "branch": "main",
+          "revision": "aa767824e936aa715485a81708b3f20853b72698",
+          "version": null
+        }
+      },
+      {
+        "package": "Favorite",
+        "repositoryURL": "https://github.com/IzumiShaka-desu/Favorite-gemmu.git",
+        "state": {
+          "branch": "main",
+          "revision": "b6d86548f493ffb61ffe627517ea9f84f35be345",
+          "version": null
+        }
+      },
+      {
+        "package": "Home",
+        "repositoryURL": "https://github.com/IzumiShaka-desu/Home-gemmu.git",
+        "state": {
+          "branch": "main",
+          "revision": "d60e64d61337faacdc9896af2cef81086b108d93",
+          "version": null
+        }
+      },
+      {
+        "package": "NetworkImage",
+        "repositoryURL": "https://github.com/gonzalezreal/NetworkImage.git",
+        "state": {
+          "branch": null,
+          "revision": "f8b8ed0be39d2f4aa00a6e8d3b18a62a94eff8d8",
+          "version": "4.0.0"
+        }
+      },
+      {
+        "package": "Realm",
+        "repositoryURL": "https://github.com/realm/realm-cocoa.git",
+        "state": {
+          "branch": "master",
+          "revision": "2a130ce1fc663be5d5aed62fca1534468679f1f0",
+          "version": null
+        }
+      },
+      {
+        "package": "RealmDatabase",
+        "repositoryURL": "https://github.com/realm/realm-core",
+        "state": {
+          "branch": null,
+          "revision": "6b81f1a7a2d421f9e0b9e7f04e76bcf736a54409",
+          "version": "11.9.0"
+        }
+      },
+      {
+        "package": "Search",
+        "repositoryURL": "https://github.com/IzumiShaka-desu/Search-gemmu.git",
+        "state": {
+          "branch": "main",
+          "revision": "49e41b707444b3a65ab76fc9fe13c98771c9c78a",
+          "version": null
+        }
+      },
+      {
+        "package": "xctest-dynamic-overlay",
+        "repositoryURL": "https://github.com/pointfreeco/xctest-dynamic-overlay",
+        "state": {
+          "branch": null,
+          "revision": "50a70a9d3583fe228ce672e8923010c8df2deddd",
+          "version": "0.2.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
