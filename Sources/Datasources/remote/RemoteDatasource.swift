@@ -5,24 +5,28 @@
 //  Created by Akashaka on 16/02/22.
 //
 
+import Common
+import Home
+import Search
+import Detail
 import Foundation
 import Alamofire
 import Combine
 
-protocol RemoteDataSourceProtocol: AnyObject {
+public protocol RemoteDataSourceProtocol: AnyObject {
   func getGames(target: String?) -> AnyPublisher<GamesResponse, Error>
   func searchGames(for query: String) -> AnyPublisher<GamesSearchResponse, Error>
   func getDetailGame(for id: Int) -> AnyPublisher<GameDetailResponse, Error>
 }
-final class RemoteDataSource: NSObject {
+public final class RemoteDataSource: NSObject {
 
   private override init() { }
 
-  static let sharedInstance: RemoteDataSource =  RemoteDataSource()
+public  static let sharedInstance: RemoteDataSource =  RemoteDataSource()
 
 }
 extension RemoteDataSource: RemoteDataSourceProtocol {
-  func getGames(target: String? = nil) -> AnyPublisher<GamesResponse, Error> {
+public  func getGames(target: String? = nil) -> AnyPublisher<GamesResponse, Error> {
     return Future<GamesResponse, Error> { completion in
       if let url = API.buildUrl(endpoint: .games) {
         AF.request(target ?? url)
@@ -38,7 +42,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
       }
     }.eraseToAnyPublisher()
   }
-  func searchGames(for query: String) -> AnyPublisher<GamesSearchResponse, Error> {
+public  func searchGames(for query: String) -> AnyPublisher<GamesSearchResponse, Error> {
     return Future<GamesSearchResponse, Error> { completion in
       if let url = API.buildUrl(endpoint: .games, args: ["search": query]) {
         AF.request(url)
@@ -54,7 +58,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
       }
     }.eraseToAnyPublisher()
   }
-  func getDetailGame(for id: Int) -> AnyPublisher<GameDetailResponse, Error> {
+public  func getDetailGame(for id: Int) -> AnyPublisher<GameDetailResponse, Error> {
     return Future<GameDetailResponse, Error> { completion in
       if let url = API.buildUrl(endpoint: .games, param: "/\(id)") {
         AF.request(url)
