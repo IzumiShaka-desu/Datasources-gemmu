@@ -4,15 +4,18 @@
 //
 //  Created by Akashaka on 16/02/22.
 //
+import Common
+import Favorite
 import RealmSwift
 import Foundation
 import Combine
 
-protocol LocaleDataSourceProtocol: AnyObject {
+
+ protocol LocaleDataSourceProtocol: AnyObject {
   func addOrDeleteFavoriteGame(favoritedGame: FavoriteGame, isFavorited: Bool)
   func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error>
 }
-final class LocaleDataSource: NSObject {
+public final class LocaleDataSource: NSObject {
   @ObservedResults(FavoriteGame.self) var games
   private let realm: Realm?
 
@@ -20,14 +23,14 @@ final class LocaleDataSource: NSObject {
     self.realm = realm
   }
 
-  static let sharedInstance: (Realm?) -> LocaleDataSource = { realmDatabase in
+ public static let sharedInstance: (Realm?) -> LocaleDataSource = { realmDatabase in
     return LocaleDataSource(realm: realmDatabase)
   }
 
 }
 
-extension LocaleDataSource: LocaleDataSourceProtocol {
-  func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error> {
+ extension LocaleDataSource: LocaleDataSourceProtocol {
+public  func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error> {
     return Future<Bool, Error> {completion in
       if let realm = self.realm {
         let result = realm.object(ofType: FavoriteGame.self, forPrimaryKey: idGame) != nil
@@ -40,7 +43,7 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
      
   }
 
-  func addOrDeleteFavoriteGame(favoritedGame: FavoriteGame, isFavorited: Bool) {
+ public func addOrDeleteFavoriteGame(favoritedGame: FavoriteGame, isFavorited: Bool) {
     if isFavorited {
       guard let object=realm?.object(
         ofType: FavoriteGame.self,
